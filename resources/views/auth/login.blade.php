@@ -54,7 +54,7 @@
 
             <div class="text-center text-sm text-gray-500">
                 Don't have an account?
-                <a href="#" class="font-medium text-green-600 hover:text-green-500">Register</a>
+                <a href="{{ route('show.register') }}" class="font-medium text-green-600 hover:text-green-500">Register</a>
             </div>
         </form>
     </div>
