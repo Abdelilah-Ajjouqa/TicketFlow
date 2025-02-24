@@ -15,10 +15,10 @@
             <p class="text-green-100 mt-2">Sign in to your account</p>
         </div>
 
-        <form class="p-6 space-y-6">
+        <form method="POST" action="{{ route('login') }}" class="p-6 space-y-6">
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <input type="email" id="email" name="email" required
+                <input type="email" id="email" name="email" required value="{{ old('email') }}"
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
                     placeholder="Enter your email">
             </div>
