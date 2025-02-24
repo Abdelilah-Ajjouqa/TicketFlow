@@ -15,7 +15,7 @@
             <p class="text-green-100 mt-2">Join our community today</p>
         </div>
 
-        <form class="p-6 space-y-6">
+        <form id="registrationForm" method="POST" action="{{ route('register') }}" class="p-6 space-y-6">
             <div>
                 <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                 <input type="text" id="fullName" name="fullName" required
