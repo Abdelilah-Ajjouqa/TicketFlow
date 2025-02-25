@@ -38,9 +38,9 @@
             </div>
 
             <div>
-                <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm
+                <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-1">Confirm
                     Password</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required
+                <input type="password" id="password_confirmation" name="password_confirmation" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
                     placeholder="Confirm your password">
             </div>
