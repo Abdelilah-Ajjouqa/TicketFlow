@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/home', [UsersController::class, 'pages.home']);
+Route::get('/home', [UsersController::class, 'pages.home'])->name('pages.home');
 // auth Routes
 Route::get('/register', [AuthController::class, 'showRegister'])->name('show.register');
 Route::get('/login', [AuthController::class, 'showLogin'])->name('show.login');
