@@ -7,9 +7,10 @@
             </div>
 
             <form id="registrationForm" method="POST" action="{{ route('register') }}" class="p-6 space-y-6">
+                @csrf
                 <div>
                     <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" required
+                    <input type="text" id="fullName" name="name" required
                         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
                         placeholder="Enter your full name">
                 </div>
