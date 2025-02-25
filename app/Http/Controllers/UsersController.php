@@ -2,64 +2,47 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\users;
 use App\Http\Requests\StoreusersRequest;
 use App\Http\Requests\UpdateusersRequest;
+use App\Models\User;
+
+use function Pest\Laravel\get;
+use function Pest\Laravel\post;
 
 class UsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('pages.home', ['users' => $users]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        // 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreusersRequest $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(users $users)
+    public function show(User $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(users $users)
+    public function edit(User $user)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateusersRequest $request, users $users)
+    public function update(UpdateusersRequest $request, User $user)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(users $users)
+    public function destroy(User $user)
     {
         //
     }
