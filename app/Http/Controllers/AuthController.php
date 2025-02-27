@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,7 +32,19 @@ class AuthController extends Controller
         return redirect()->route('home');
     }
 
-    public function login(){
+    public function login(Request $request){
+        $validation = $request -> validate([
+            'email' => 'required|email',
+            'password' => 'required|string'
+        ]);
 
+        if(Auth::attempt($validation)){
+            $request->session()->regenerate();
+            return redirect()->route('home');
+        }
+
+        throw ValidationException::withMessages([
+            'email' => 'Invalid email or password'
+        ]);
     }
 }
