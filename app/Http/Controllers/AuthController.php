@@ -19,7 +19,7 @@ class AuthController extends Controller
 
     public function register(Request $request){
 
-        $validation = $request -> validate([
+        $validation = $request->validate([
             'name' => 'required|string|max:225',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|confirmed'
@@ -28,23 +28,21 @@ class AuthController extends Controller
         $user = User::create($validation);
 
         Auth::login($user);
-
-        return redirect()->route('home');
     }
 
     public function login(Request $request){
-        $validation = $request -> validate([
+        $validation = $request->validate([
             'email' => 'required|email',
             'password' => 'required|string'
         ]);
 
-        if(Auth::attempt($validation)){
+        if(Auth::attempt($request->only('email', 'password'))){
             $request->session()->regenerate();
             return redirect()->route('home');
+        } else {
+            throw ValidationException::withMessages([
+                'email' => ['Invalid email or password']
+            ]);
         }
-
-        throw ValidationException::withMessages([
-            'email' => 'Invalid email or password'
-        ]);
     }
 }
