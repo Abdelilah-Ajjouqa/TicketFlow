@@ -7,6 +7,7 @@
             </div>
 
             <form method="POST" action="{{ route('login') }}" class="p-6 space-y-6">
+                @csrf
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
                     <input type="email" id="email" name="email" required value="{{ old('email') }}"
