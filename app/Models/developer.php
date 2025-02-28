@@ -15,4 +15,8 @@ class developer extends Model
     public function developer(){
         return $this->belongsTo(User::class);
     }
+
+    public function assignments(){
+        return $this->belongsToMany(Assignment::class);
+    }
 }
