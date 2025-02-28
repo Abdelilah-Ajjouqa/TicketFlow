@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>TicketFlow</title>
 </head>
+
 <body>
     <header class="bg-white">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -51,20 +53,30 @@
                         </ul>
                     </nav>
 
-                    <div class="flex items-center gap-4">
-                        <div class="sm:flex sm:gap-4">
-                            <a class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm"
-                                href="{{ route('show.login') }}">
-                                Login
-                            </a>
-
-                            <div class="hidden sm:flex">
-                                <a class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-                                    href="{{ route('show.register') }}">
-                                    Register
+                    @guest
+                        <div class="flex items-center gap-4">
+                            <div class="sm:flex sm:gap-4">
+                                <a class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm"
+                                    href="{{ route('show.login') }}">
+                                    Login
                                 </a>
+
+                                <div class="hidden sm:flex">
+                                    <a class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                                        href="{{ route('show.register') }}">
+                                        Register
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        @endguest
+
+                        @auth
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endauth
 
                         <div class="block md:hidden">
                             <button class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
