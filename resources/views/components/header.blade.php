@@ -83,7 +83,7 @@
                                 <div class="absolute end-0 z-10 mt-0.5 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg hidden"
                                     id="profile-menu" role="menu">
                                     <div class="p-2">
-                                        <a href="#"
+                                        <a href="{{ route('profile') }}"
                                             class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
                                             role="menuitem">
                                             My profile
