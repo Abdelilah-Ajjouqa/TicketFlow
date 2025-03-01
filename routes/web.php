@@ -5,7 +5,8 @@ use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [UsersController::class, 'index'])->name('home');
+Route::get('/', [UsersController::class, 'index'])->name('index');
+Route::get('/home', [UsersController::class, 'pages.home'])->name('home');
 
 // auth Routes
 
