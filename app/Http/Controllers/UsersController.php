@@ -14,7 +14,7 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('pages.home', ['users' => $users]);
+        return view('index', ['users' => $users]);
     }
 
     public function create()

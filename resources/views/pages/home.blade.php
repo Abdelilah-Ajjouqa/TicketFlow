@@ -1,3 +1,1 @@
-<x-header>
-    home
-</x-header>
+home

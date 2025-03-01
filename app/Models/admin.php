@@ -16,5 +16,7 @@ class admin extends Model
         return $this->belongsTo(User::class);
     }
 
-
+    public function assignments(){
+        return $this->hasMany(Assignment::class);
+    }
 }
