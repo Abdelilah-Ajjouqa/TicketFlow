@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [UsersController::class, 'index'])->name('index');
-Route::get('/home', [UsersController::class, 'pages.home'])->name('home');
+Route::get('/home', function(){
+    return view('pages.home');
+})->name('home');
 
 // auth Routes
 
